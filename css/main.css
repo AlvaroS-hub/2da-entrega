@@ -1,176 +1,386 @@
-*{
-    margin: 0;
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../img/fondo.jpg);
+}
+
+.header {
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 0;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.logo img {
+  height: 60px; /* Ajusta el tamaño del logo */
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-right: 20px;
+  z-index: 2;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  background: black;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 150px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  display: block;
+  border-bottom: 1px solid #444;
+}
+
+.nav-links li:last-child a {
+  border-bottom: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+/* Opcional: Menú horizontal en pantallas grandes */
+@media (min-width: 600px) {
+  .header {
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos generales*/
-
-body{
-    background-image: url(../img/fondo.jpg);
-   
-}
-header div img{
-    width: 80%;
-    height: 80%;
-}
-
-header{
-    background-color: black;
-}
-
-a{
-    color: whitesmoke;
-    text-decoration: none;
-}
-/* Estilo header para mobile para página central*/
-
-header{
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    
-}
-
-header nav ul{
-    color: whitesmoke;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-right: 1.5rem;
-}
-
-/* Estilos main para mobile*/
-
-/* Encabezado*/
-
-h1{
-    color: whitesmoke;
-    text-align: center;
-    justify-content: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-/* Main*/
-
-main{
-    height: 60vh;
-    margin: 0px 20px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 25%);
-    gap: 1.5rem;
-    align-content: center;
-
-}
-
-main div img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   
-}
-
-main p{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: whitesmoke;
-    text-align: center;
-    
-}
-
-/* Footer */
-
-footer{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    color: whitesmoke;
-    gap: 16px;
-    text-align: center;
-    justify-content: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-
-footer div img{
-    width: 10%;
-    height: 10%;
-    
-}
-
-footer p{
-    padding: 50px;
-}
-
-footer img {
-  margin-right: 20px; 
-}
-
-/* Estilos "trabajos" para mobile*/
-
-main .t2, main .t3, main .t4{
+  }
+  .hamburger {
     display: none;
+  }
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    width: auto;
+    border-radius: 0;
+  }
+  .nav-links li a {
+    border-bottom: none;
+    padding: 10px 20px;
+  }
+}
+/* Estilos del encabezado*/
+h1 {
+  color: whitesmoke;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-/* Estilos "consejos" para mobile */
-
-main p{
-    margin-top: -60px;
+/* Estilos de la galeria */
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px;
+  max-width: 500px;
+  margin: 30px auto;
+  width: 100%;
 }
 
+.galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  background: white;
+}
 
+.img1 {
+  grid-column: 1;
+  grid-row: 1;
+  aspect-ratio: 1/1;
+}
 
+.img2 {
+  grid-column: 2;
+  grid-row: 1;
+  aspect-ratio: 1/1;
+}
 
-/* Estilo desktop*/
+.img3 {
+  grid-column: 1/span 2;
+  grid-row: 2;
+  aspect-ratio: 2/1;
+}
 
-@media screen and (min-width: 1024px){
-    header{
-        
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 600px;
-    }
-    
-    
-    main{
-        grid-template-columns: repeat(3, 3fr);
-        grid-template-rows: repeat(3, 15%) 20%;
-        display: grid;
-        height: 40vh;
-        
-    }
-    
-    main div img{
-        width: 100%;      
-        height: 200px;    
-        object-fit: cover;
-        display: block;
-        border-radius: 20px;
-    }
-    main .t2, main .t3, main .t4{
+footer {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.footer-titulo {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: whitesmoke;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+/* Centrado y espacio entre imagenes*/
+.footer-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-images a {
+  display: inline-block;
+}
+
+.footer-images img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+.footer-images a:hover img {
+  transform: scale(1.1);
+}
+
+.header {
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 0;
+}
+
+.logo img {
+  height: 40px;
+  margin-left: 20px;
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.volver-btn {
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-right: 20px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s, color 0.2s;
+}
+
+.volver-btn:hover {
+  background: white;
+  color: black;
+}
+
+.galeriat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  max-width: 600px;
+  margin: 40px auto;
+  height: 400px;
+}
+
+.galeriat img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Ubicaciones en el grid */
+.t1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.t2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.t3 {
+  grid-column: 2;
+  grid-row: 1/span 2; /* Ocupa las dos filas de la segunda columna */
+}
+
+main .t4, main .t5, main .t6 {
+  display: none;
+}
+
+footer {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.footer-titulo {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: whitesmoke;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+/* Centrado y espacio entre imagenes*/
+.footer-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-images a {
+  display: inline-block;
+}
+
+.footer-images img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+.footer-images a:hover img {
+  transform: scale(1.1);
+}
+
+@media (min-width: 1024px) {
+  .galeriat {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 100vw;
+    height: 60vh;
+  }
+  /* Quita posiciones individuales, deja que el grid las ordene automático */
+  .t1, .t2, .t3, .t4, .t5, .t6 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  main .t4,
+  main .t5,
+  main .t6 {
+    display: block;
+  }
+}
+main p {
+  font-size: larger;
+  color: whitesmoke;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    min-height: 100vh;
+    margin: 0;
     display: flex;
-    }
-
-    main .trabajos{
-        display: grid;
-        width: 400px;
-        grid-template-columns: repeat(3, 1fr);
-        
-        
-
-    }
-    main p{
-        margin-top: 30px;
-        width: 60vw; 
-        margin: 0;    
-        padding: 0;
-    }
-
-
+    flex-direction: column;
+  }
+  main {
+    flex: 1; /* Ocupa todo el espacio disponible y empuja el footer abajo */
+  }
+  .footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0 10px 0;
+  }
+  .footer-titulo {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .footer-images {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+  .footer-images img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  .footer-images img:hover {
+    transform: scale(1.1);
+  }
 }
-    
+@media screen and (min-width: 1024px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 1200px;
+  }
+  .img1, .img2, .img3 {
+    grid-column: auto; /* Cada imagen ocupa 1 columna */
+    grid-row: 1;
+    aspect-ratio: 1/1;
+  }
+}
 
+/*# sourceMappingURL=main.css.map */

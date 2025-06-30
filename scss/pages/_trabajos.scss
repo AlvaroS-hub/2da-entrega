@@ -1,0 +1,148 @@
+// Variables
+
+@import "../abstract/variables";
+
+
+
+
+
+
+.header {
+  width: 100%;
+  background: $color-principal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 0;
+}
+.logo img {
+  height: 40px;
+  margin-left: 20px;
+}
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.volver-btn {
+  background: $color-secundario;
+  color: $color-principal;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-right: 20px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.2s, color 0.2s;
+}
+.volver-btn:hover {
+  background: $color-secundario;
+  color: $color-principal;
+}
+
+
+
+
+.galeriat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  max-width: 600px; 
+  margin: 40px auto;
+  height: 400px;     
+}
+
+.galeriat img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Ubicaciones en el grid */
+.t1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.t2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.t3 {
+  grid-column: 2;
+  grid-row: 1 / span 2; /* Ocupa las dos filas de la segunda columna */
+}
+
+main .t4, main .t5, main .t6 {
+  display: none;
+}
+
+footer {
+    color: $color-tipografia;
+    text-align: center;
+    
+}
+.footer-titulo {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: $color-tipografia;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Centrado y espacio entre imagenes*/
+
+.footer-images {
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  gap: 24px;                
+}
+
+.footer-images a {
+  display: inline-block;
+}
+
+.footer-images img {
+  width: 48px;              
+  height: 48px;
+  object-fit: contain;      
+  display: block;
+  transition: transform 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+
+.footer-images a:hover img {
+  transform: scale(1.1);    
+}
+ // Estilos desk
+ 
+@media (min-width: 1024px) {
+  .galeriat {
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);    
+    max-width: 100vw;
+    height: 60vh; 
+  }
+  /* Quita posiciones individuales, deja que el grid las ordene automático */
+  .t1, .t2, .t3, .t4, .t5, .t6 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  main .t4,
+  main .t5,
+  main .t6 {
+    display: block;
+  }
+}

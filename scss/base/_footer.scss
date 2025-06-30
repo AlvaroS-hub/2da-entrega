@@ -1,0 +1,41 @@
+footer {
+    color: $color-tipografia;
+    text-align: center;
+    
+}
+.footer-titulo {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: $color-tipografia;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Centrado y espacio entre imagenes*/
+
+.footer-images {
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  gap: 24px;                
+}
+
+.footer-images a {
+  display: inline-block;
+}
+
+.footer-images img {
+  width: 48px;              
+  height: 48px;
+  object-fit: contain;      
+  display: block;
+  transition: transform 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+
+.footer-images a:hover img {
+  transform: scale(1.1);    
+}
+
